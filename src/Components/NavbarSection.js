@@ -1,28 +1,30 @@
 import Container from '@mui/material/Container';
 import styled from '@emotion/styled';
 import GetQuoteButton from './GetQuoteButton';
+import GetQuoteButtonWidth from './GetQuoteButtonWidth';
 import {TbMenu, TbX} from 'react-icons/tb';
 import { useState } from 'react';
 
-const ContainerChild = styled.div`
 
 
+// const Shownav = styled.div`
+// display: block;
+// `;
+
+const NavContainer = styled.div`
+width: 100%;
 
 @media (max-width: 480px) {
     .menubutton{
         display: block;
     }
 
-    .hide{
-    display: none;
-    }
-    .show{
-        display: block;
+    .shownav expanded{
+        display: block
     }
 
-    .linksitems{
-       
-       
+    .hidenav{
+        display: none;
     }
 }
 `;
@@ -35,7 +37,7 @@ align-items: center;
 
 const LogoImage = styled.img`
 width: 20%;
-
+z-index: 2;
 @media (max-width: 600px) {
     width: 50%;  
 }
@@ -43,20 +45,25 @@ width: 20%;
 
 const LinksContainer = styled.div`
 display: flex;
-
 .Linkbutton{
     display: none;
 }
 
-
+.linksitems{
+    display: none;
+}
 
 @media (max-width: 480px) {
+    .noneall{
+        display: none;
+    }
     display: block;
+    // display: none;
     position: fixed;
     top: 0; 
     left: 0;
+    height: 50vh;
     padding: 100px 10px 10px 30px;
-
 }
 `;
 
@@ -91,6 +98,10 @@ padding: 5px 10px 5px 10px;
 border-radius: 10px;
 display: none;
 cursor: pointer;
+z-index: 2;
+
+
+
 `;
 
 const GetQuoteButtonStyle = styled.div`
@@ -110,20 +121,21 @@ display: none;
 export default function NavbarSection() {
     const [toggle, setToggle] = useState(false);
 
-    const HandleClick = () => setToggle(!toggle)
+    const HandleClick = () => setToggle(!toggle);
 
     return(
         <>
+        <NavContainer>
             <Container style={{marginTop: '10px'}}>
                 
-        <ContainerChild className={toggle ? 'hide' : 'show'}>
+        
         {
         Navsectiondatas.map(Navsectiondata => (
             <div key={Navsectiondata.id}>
                 <Flex>
                             <LogoImage src={Navsectiondata.LogoUrl} alt={Navsectiondata.LogoAlt}/>
                 
-                <LinksContainer className='linksitems'>
+                <LinksContainer >
                     <HomeUrl>{Navsectiondata.HomeUrl}</HomeUrl>
                     <AboutUrl>{Navsectiondata.AboutUrl}</AboutUrl>
                     <ServiceUrl>{Navsectiondata.ServiceUrl}</ServiceUrl>
@@ -131,7 +143,7 @@ export default function NavbarSection() {
                     <CartsUrl>{Navsectiondata.CartsUrl}</CartsUrl>
                     
                     <LinkGetBuuton>
-                    <GetQuoteButton />
+                    <GetQuoteButtonWidth />
                     </LinkGetBuuton>
                 </LinksContainer>
 
@@ -157,10 +169,11 @@ export default function NavbarSection() {
         ))
     }
 
-        </ContainerChild>
+        
                 
                 
             </Container>
+        </NavContainer>
         </>
     )
 }

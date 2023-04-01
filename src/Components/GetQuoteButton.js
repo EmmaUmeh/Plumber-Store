@@ -1,12 +1,17 @@
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
 
+import styled from "@emotion/styled"
 
-export default function GetQuoteButton () {
+const ButtonStyle = styled.div`
+
+`
+export default function BrowseOurService () {
     return(
         <>
-        <Button style={{backgroundColor: '#3083ff', color: 'white', fontWeight: '700'}}>
-            Get a quote
-        </Button>
+        <ButtonStyle style={{backgroundColor: '#3083ff', color: 'white', marginLeft: '10px', fontWeight: '600', padding: '15px 15px 15px 15px', borderRadius: '8px'}}>
+           Get a quote
+        </ButtonStyle>
         </>
     )
 }
+

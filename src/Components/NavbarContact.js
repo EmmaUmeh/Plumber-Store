@@ -99,10 +99,9 @@ export default function NavbarContact() {
             
 
             {
-               Navbardata.map(Navdata => (
-                <NavbarFirstElement>
-                   <div key={Navdata.id}>
-                    
+            
+            Navbardatas.map(Navbardata => (
+                <NavbarFirstElement key={Navbardata.id}>
 
                       <Flex>
 
@@ -110,16 +109,16 @@ export default function NavbarContact() {
 
                                <AllInfo>
                                <EmailContainer>
-                                       <EmailImage src={Navdata.EmailImage}  alt={Navdata.EmailAlt}/>
-                                       <EmailDetails >{Navdata.EmailUrl}</EmailDetails>
+                                       <EmailImage src={Navbardata.EmailImage}  alt={Navbardata.EmailAlt}/>
+                                       <EmailDetails >{Navbardata.EmailUrl}</EmailDetails>
                                </EmailContainer>
                                    
                                    
                                
 
                              <PhoneContainer>
-                                   <PhoneImage src={Navdata.PhoneImage} alt={Navdata.EmailAlt}/>
-                                   <PhoneDetails>{Navdata.PhoneUrl}</PhoneDetails>
+                                   <PhoneImage src={Navbardata.PhoneImage} alt={Navbardata.EmailAlt}/>
+                                   <PhoneDetails>{Navbardata.PhoneUrl}</PhoneDetails>
                              </PhoneContainer>
                                  
                                    
@@ -127,8 +126,8 @@ export default function NavbarContact() {
                               
 
                                <LocationContainer>
-                                   <LocationImage src={Navdata.LocationImage} alt={Navdata.EmailAlt}/>
-                                   <LocationDetails> {Navdata.LocationUrl}</LocationDetails>
+                                   <LocationImage src={Navbardata.LocationImage} alt={Navbardata.EmailAlt}/>
+                                   <LocationDetails> {Navbardata.LocationUrl}</LocationDetails>
                                </LocationContainer>
                                </AllInfo>
                                 
@@ -142,7 +141,6 @@ export default function NavbarContact() {
                               </SocialMediaIconHolder>
 
                       </Flex>
-                   </div>
                    <hr />
                    </NavbarFirstElement>
                ))
@@ -156,12 +154,12 @@ export default function NavbarContact() {
        
         
     )
-}
+            }
 
 
 
 
-export const Navbardata = [
+export const Navbardatas = [
 
     {
         id: 0,
