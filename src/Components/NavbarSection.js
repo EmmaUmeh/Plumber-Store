@@ -15,17 +15,7 @@ const NavContainer = styled.div`
 width: 100%;
 
 @media (max-width: 480px) {
-    .menubutton{
-        display: block;
-    }
 
-    .shownav expanded{
-        display: block
-    }
-
-    .hidenav{
-        display: none;
-    }
 }
 `;
 
@@ -38,8 +28,12 @@ align-items: center;
 const LogoImage = styled.img`
 width: 20%;
 z-index: 2;
-@media (max-width: 600px) {
+@media (max-width: 489px) {
     width: 50%;  
+}
+
+@media (min-width: 489px) and (max-width: 900px) {
+    width: 50%;
 }
 `;
 
@@ -53,12 +47,25 @@ display: flex;
     display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 489px) {
     .noneall{
         display: none;
     }
     display: block;
-    // display: none;
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    height: 50vh;
+    padding: 100px 10px 10px 30px;
+}
+
+@media (min-width: 489px) and (max-width: 900px) {
+    .noneall{
+        display: none;
+    }
+    display: block;
+    display: none;
     position: fixed;
     top: 0; 
     left: 0;
@@ -100,12 +107,23 @@ display: none;
 cursor: pointer;
 z-index: 2;
 
+@media (max-width: 489px) {
+    display: block;
+}
+
+@media (min-width: 489px) and (max-width: 900px) {
+    display: block;
+}
 
 
 `;
 
 const GetQuoteButtonStyle = styled.div`
-@media (max-width: 480px) {
+@media (max-width: 489px) {
+    display: none;
+}
+
+@media (min-width: 489px) and (max-width: 900px) {
     display: none;
 }
 `;
@@ -113,10 +131,15 @@ const GetQuoteButtonStyle = styled.div`
 const LinkGetBuuton = styled.div`
 display: none;
 
-@media (max-width: 480px) {
+@media (max-width: 489px) {
     display: block;
   
 }
+
+@media (min-width: 489px) and (max-width: 900px) {
+    display: block;
+}
+
 `
 export default function NavbarSection() {
     const [toggle, setToggle] = useState(false);

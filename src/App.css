@@ -8,9 +8,11 @@ body{
   color: #6e7891;
   line-height: 1.667em;
   font-weight: 700;
-
+background-position: 40px center;
 }
-
+img{
+   width: 100%;
+}
 hr{
   opacity: 0.4;
   font-weight: 200;
